@@ -1,4 +1,5 @@
 
+*.swp
 package-lock.json
 
 # Config
