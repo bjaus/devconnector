@@ -297,11 +297,23 @@ router.delete('/education/:edu_id',
 router.delete('/',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    Profile.findOneAndDelete({ user: req.user.id })
-      .then( () => {
-        res.json({ deleted: 'profile', success: true });
-      })
-      .catch(err => res.status(404).json(err));
+
+    // Delete profile and user
+    Profile.findOneAndRemove({ user: req.user.id }).then( () => {
+      User.findOneAndRemove({ _id: req.user.id }).then( () => {
+        res.json({ success: true })
+      });
+    });
   }
 );
+
+//    // Delete profile only
+//    Profile.findOneAndDelete({ user: req.user.id })
+//      .then( () => {
+//        res.json({ deleted: 'profile', success: true });
+//      })
+//      .catch(err => res.status(404).json(err));
+  }
+);
+
 module.exports = router;

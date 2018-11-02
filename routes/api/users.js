@@ -21,6 +21,50 @@ const tokenExpiration = 3600 * 24;
 // @access  Public
 router.get('/test', (req, res) => res.json({ msg: 'Users Works' }));
 
+// @route   GET api/users/all
+// @desc    Return all users
+// @access  Public
+router.get('/all',
+  (req, res) => {
+    const errors = {};
+
+    User.find()
+      .then(profiles => {
+
+        if ( profiles.length > 0 ) {
+          const users = [];
+
+          for ( let i = 0; i < profiles.length; i++ ) {
+            let user = {};
+            let profile = profiles[i];
+
+            user.name = profile.name;
+            user.email = profile.email;
+            user.avatar = profile.avatar;
+            users.push(user);
+          }
+
+          res.json(
+            users.sort( (a, b) => {
+              let nameA = a.name.toUpperCase();
+              let nameB = b.name.toUpperCase();
+
+              if ( nameA < nameB ) return -1;
+              else if ( nameA > nameB ) return 1;
+              else return 0;
+            })
+          );
+
+        } else {
+          errors.users = 'No users have registered yet';
+          res.status(404).json(errors);
+        }
+
+      })
+    .catch(err => res.status(404).json(err));
+  }
+);
+
 // @route   POST api/users/register
 // @desc    Register user
 // @access  Public
@@ -130,15 +174,17 @@ router.get(
 // @route   DELETE api/users/current
 // @desc    Delete current user
 // @access  Private
-router.delete(
-  '/current',
+router.delete('/current',
   passport.authenticate('jwt', { session: false }),
   (req, res) => {
-    User.findOneAndDelete({ user: req.user_id })
-      .then( () => {
-        res.json({ deleted: 'user', success: true });
-      })
-      .catch(err => res.status(404).json(err));
+    // FIXME: Record is randomly deleting users
+
+//    User.findOneAndDelete({ user: req.user_id })
+//      .then( () => {
+//        res.json({ deleted: 'user', success: true });
+//      })
+//      .catch(err => res.status(404).json(err));
+
   }
 );
 
