@@ -1,1 +1,1 @@
-Social Network for Developers
+Social Network for Developers - MERN Stack
