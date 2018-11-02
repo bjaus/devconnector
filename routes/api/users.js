@@ -171,21 +171,4 @@ router.get(
   }
 );
 
-// @route   DELETE api/users/current
-// @desc    Delete current user
-// @access  Private
-router.delete('/current',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
-    // FIXME: Record is randomly deleting users
-
-//    User.findOneAndDelete({ user: req.user_id })
-//      .then( () => {
-//        res.json({ deleted: 'user', success: true });
-//      })
-//      .catch(err => res.status(404).json(err));
-
-  }
-);
-
 module.exports = router;
