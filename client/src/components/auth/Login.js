@@ -86,7 +86,7 @@ class Login extends Component {
                   type='password'
                   value={ this.state.password }
                   onChange={ this.onChange }
-                  error={ errors.email }
+                  error={ errors.password }
                 />
 
                 <input
