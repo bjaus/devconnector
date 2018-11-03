@@ -11,7 +11,8 @@ const TextFieldGroup = ({
   info,
   type,
   onChange,
-  disabled
+  disabled,
+  addBreak
 }) => {
   return (
     <div className='from-group'>
@@ -31,7 +32,7 @@ const TextFieldGroup = ({
       />
       { error && <div className='invalid-feedback'>{ error }</div> }
       { info && <small className='form-text text-muted text-center'>{ info }</small> }
-      <br/>
+      { addBreak && <br/> }
     </div>
   );
 };
@@ -43,11 +44,13 @@ TextFieldGroup.propTypes = {
   info: PropTypes.string,
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  disabled: PropTypes.string
+  disabled: PropTypes.string,
+  addBreak: PropTypes.bool.isRequired
 };
 
 TextFieldGroup.defaultProps = {
-  type: 'text'
+  type: 'text',
+  addBreak: true
 };
 
 export default TextFieldGroup;

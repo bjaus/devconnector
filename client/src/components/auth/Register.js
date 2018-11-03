@@ -105,6 +105,7 @@ class Register extends Component {
                   value={ this.state.password2 }
                   onChange={ this.onChange }
                   error={ errors.password2 }
+                  addBreak={ false }
                 />
 
                 <input 

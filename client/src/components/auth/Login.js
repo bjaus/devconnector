@@ -87,6 +87,7 @@ class Login extends Component {
                   value={ this.state.password }
                   onChange={ this.onChange }
                   error={ errors.password }
+                  addBreak={ false }
                 />
 
                 <input
