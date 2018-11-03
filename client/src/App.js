@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import { Provider } from 'react-redux';
 import setAuthToken from './utils/setAuthToken';
@@ -8,6 +8,8 @@ import { clearCurrentProfile } from './actions/profileActions';
 
 // Redux Store
 import store from './store';
+
+import PrivateRoute from './components/common/PrivateRoute';
 
 // Layout
 import Navbar from './components/layout/Navbar';
@@ -57,7 +59,9 @@ class App extends Component {
             <div className='container'>
               <Route exact path='/register' component={ Register } />
               <Route exact path='/login' component={ Login } />
-              <Route exact path='/dashboard' component={ Dashboard } />
+              <Switch>
+                <PrivateRoute exact path='/dashboard' component={ Dashboard } />
+              </Switch>
             </div>
             <Footer />
           </div>
