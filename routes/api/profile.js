@@ -32,6 +32,11 @@ router.get('/all', (req, res) => {
         errors.noProfile = 'There are no profiles';
         res.status(404).json(errors);
       } else {
+        profiles = profiles.sort( (a, b) => {
+          if ( a.user.name < b.user.name ) return -1;
+          if ( a.user.name < b.user.name ) return 1;
+          return 0;
+        });
         res.json(profiles);
       }
     })
