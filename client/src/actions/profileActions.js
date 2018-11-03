@@ -3,11 +3,30 @@ import axios from 'axios';
 import {
   GET_ERRORS,
   GET_PROFILE,
-//  GET_PROFILES,
+  GET_PROFILES,
   PROFILE_LOADING,
   CLEAR_CURRENT_PROFILE,
   SET_CURRENT_USER
 } from './types';
+
+// Get all profiles
+export const getProfiles = () => dispatch => {
+  dispatch(setProfileLoading());
+  axios
+    .get('/api/profile/all')
+    .then(res =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: null
+      })
+    );
+};
 
 // Get current profile
 export const getCurrentProfile = () => dispatch => {
