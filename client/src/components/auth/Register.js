@@ -77,7 +77,7 @@ class Register extends Component {
                   value={ this.state.name }
                   onChange={ this.onChange }
                   error={ errors.name }
-                /><br/>
+                />
 
                 <TextFieldGroup
                   placeholder='Email'
@@ -87,7 +87,7 @@ class Register extends Component {
                   onChange={ this.onChange }
                   error={ errors.email }
                   info='This site uses Gravatar. If you want a profile image, use a Gravatar email'
-                /><br/>
+                />
 
                 <TextFieldGroup
                   placeholder='Password'
@@ -96,7 +96,7 @@ class Register extends Component {
                   value={ this.state.password }
                   onChange={ this.onChange }
                   error={ errors.password }
-                /><br/>
+                />
       
                 <TextFieldGroup
                   placeholder='Password'
@@ -105,7 +105,7 @@ class Register extends Component {
                   value={ this.state.password2 }
                   onChange={ this.onChange }
                   error={ errors.password2 }
-                /><br/>
+                />
 
                 <input 
                   type='submit' 

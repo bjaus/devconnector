@@ -80,8 +80,6 @@ class Login extends Component {
                   error={ errors.email }
                 />
 
-                <br/>
-
                 <TextFieldGroup
                   placeholder='Password'
                   name='password'
