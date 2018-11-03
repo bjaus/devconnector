@@ -32,7 +32,7 @@ class Dashboard extends Component {
           <div className='container text-center'>
             <p className='lead text-muted'>Welcome { user.name }</p>
             <p>You have no profile, please add some info</p>
-            <Link to='/create/profile' className='btn btn-lg btn-info'> 
+            <Link to='/create-profile' className='btn btn-lg btn-info'> 
               Create Profile 
             </Link>
           </div>
