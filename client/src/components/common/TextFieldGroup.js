@@ -16,6 +16,7 @@ const TextFieldGroup = ({
 }) => {
   return (
     <div className='from-group'>
+      { label && <label className='text-muted'>{ label }</label> }
       <input
         type={ type }
         className={ 
