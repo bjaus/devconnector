@@ -49,6 +49,7 @@ class EditProfile extends Component {
     if ( nextProps.profile.profile ) {
       const profile = nextProps.profile.profile;
 
+
       // Bring skills array back to CSV
       const skillsCsv = profile.skills.join(',');
 
