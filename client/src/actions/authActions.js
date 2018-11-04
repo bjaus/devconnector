@@ -61,4 +61,6 @@ export const setCurrentUser = decoded => {
   setAuthToken(false);
   // Set current user to {} - will set isAuthenticated to false
   dispatch(setCurrentUser({}));
+  // Send to login page
+  history.push('/login');
  };
