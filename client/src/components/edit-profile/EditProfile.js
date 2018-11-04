@@ -54,19 +54,29 @@ class EditProfile extends Component {
       const skillsCsv = profile.skills.join(',');
 
       // Check profile field doesn't exist, make empty string
-      profile.company = !isEmpty(profile.company) ? profile.company : '';
-      profile.website = !isEmpty(profile.website) ? profile.website : '';
-      profile.location = !isEmpty(profile.location) ? profile.location : '';
-      profile.githubusername = !isEmpty(profile.githubusername) ? profile.githubusername : '';
-      profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
+      profile.company = !isEmpty(profile.company) 
+        ? profile.company : '';
+      profile.website = !isEmpty(profile.website) 
+        ? profile.website : '';
+      profile.location = !isEmpty(profile.location) 
+        ? profile.location : '';
+      profile.githubusername = !isEmpty(profile.githubusername) 
+        ? profile.githubusername : '';
+      profile.bio = !isEmpty(profile.bio) 
+        ? profile.bio : '';
       
       // Social Links
       profile.social = !isEmpty(profile.social) ? profile.social : {};
-      profile.twitter = !isEmpty(profile.twitter) ? profile.twitter : '';
-      profile.facebook = !isEmpty(profile.facebook) ? profile.facebook : '';
-      profile.youtube = !isEmpty(profile.youtube) ? profile.youtube : '';
-      profile.instagram = !isEmpty(profile.instagram) ? profile.instagram : '';
-      profile.linkedin = !isEmpty(profile.linkedin) ? profile.linkedin : '';
+      profile.twitter = !isEmpty(profile.social.twitter)
+        ? profile.social.twitter : '';
+      profile.facebook = !isEmpty(profile.social.facebook)
+        ? profile.social.facebook : '';
+      profile.linkedin = !isEmpty(profile.social.linkedin)
+        ? profile.social.linkedin : '';
+      profile.youtube = !isEmpty(profile.social.youtube)
+        ? profile.social.youtube : '';
+      profile.instagram = !isEmpty(profile.social.instagram)
+        ? profile.social.instagram : '';
 
       // Set component fields state
       this.setState({
