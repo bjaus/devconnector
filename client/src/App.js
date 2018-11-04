@@ -10,6 +10,7 @@ import store from './store';
 
 import PrivateRoute from './components/common/PrivateRoute';
 
+// Components
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
@@ -23,6 +24,7 @@ import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
 import AddExperience from './components/add-credentials/AddExperience';
 import AddEducation from './components/add-credentials/AddEducation';
+import Post from './components/post/Post';
 import NotFound from './components/not-found/NotFound';
 
 // Global Styling
@@ -70,6 +72,7 @@ class App extends Component {
                 <PrivateRoute exact path='/edit-profile' component={ EditProfile } />
                 <PrivateRoute exact path='/add-experience' component={ AddExperience } />
                 <PrivateRoute exact path='/add-education' component={ AddEducation } />
+                <PrivateRoute exact path='/post/:id' component={ Post } />
                 <Route exact path='/not-found' component={ NotFound } />
                 <Route component={ NotFound } />
               </Switch>
