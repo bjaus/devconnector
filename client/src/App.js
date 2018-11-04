@@ -15,9 +15,10 @@ import Landing from './components/layout/Landing';
 import Footer from './components/layout/Footer';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
+import Dashboard from './components/dashboard/Dashboard';
+import Posts from './components/posts/Posts';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
-import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
 import AddExperience from './components/add-credentials/AddExperience';
@@ -63,6 +64,7 @@ class App extends Component {
                 <Route exact path='/login' component={ Login } />
                 <Route exact path='/profiles' component={ Profiles } />
                 <Route exact path='/profile/:handle' component={ Profile } />
+                <Route exact path='/feed' component={ Posts } />
                 <PrivateRoute exact path='/dashboard' component={ Dashboard } />
                 <PrivateRoute exact path='/create-profile' component={ CreateProfile } />
                 <PrivateRoute exact path='/edit-profile' component={ EditProfile } />
