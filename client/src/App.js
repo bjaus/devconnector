@@ -16,7 +16,7 @@ import Footer from './components/layout/Footer';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/Dashboard';
-import Posts from './components/posts/Posts';
+import Posts from './components/feed/Posts';
 import Profiles from './components/profiles/Profiles';
 import Profile from './components/profile/Profile';
 import CreateProfile from './components/create-profile/CreateProfile';
