@@ -1,5 +1,7 @@
 
 *.swp
+*.swo
+
 package-lock.json
 
 # Config
