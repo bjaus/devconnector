@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import isEmpty from '../../validation/is-empty';
 
 class ProfileAbout extends Component {
   render() {
     
-    const { profile } = this.props.profile;
+    const { profile } = this.props;
 
     // Get first name
     const firstName = profile.user.name.trim().split(' ')[0];
@@ -48,8 +47,4 @@ ProfileAbout.propTypes = {
   profile: PropTypes.object.isRequired
 }
 
-const mapStateToProps = state => ({
-  profile: state.profile
-});
-
-export default connect(mapStateToProps)(ProfileAbout);
+export default ProfileAbout;
