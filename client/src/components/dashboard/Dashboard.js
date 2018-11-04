@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
@@ -15,7 +15,7 @@ class Dashboard extends Component {
   }
 
   onDeleteClick() {
-    this.props.deleteAccount();
+    this.props.deleteAccount(this.props.history);
   }
 
   render() {
@@ -98,4 +98,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps, { getCurrentProfile, deleteAccount } )(Dashboard);
+export default connect(mapStateToProps, { getCurrentProfile, deleteAccount } )( withRouter(Dashboard) );

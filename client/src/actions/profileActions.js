@@ -142,16 +142,17 @@ export const deleteEducation = id => dispatch => {
 };
 
 // Delete account & profile
-export const deleteAccount = () => dispatch => {
+export const deleteAccount = history => dispatch => {
   if ( window.confirm('Are you sure? This can NOT be undone') ) {
     axios
       .delete('/api/profile')
-      .then(res => 
+      .then(res =>  {
         dispatch({
           type: SET_CURRENT_USER,
           payload: {}
         })
-      )
+        history.push('/')
+      })
       .catch(err =>
         dispatch({
           type: GET_ERRORS,
