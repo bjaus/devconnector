@@ -10,7 +10,7 @@ const posts = require('./routes/api/posts');
 
 const app = express();
 
-// Body Parser Middleware
+// Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -19,11 +19,11 @@ const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect( db, { useNewUrlParser: true } )
-  .then( () => console.log( 'MongoDB Connected' ))
-  .catch( err => console.log( err ));
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
-// Passport Middleware
+// Passport middleware
 app.use(passport.initialize());
 
 // Passport Config
@@ -35,15 +35,14 @@ app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
 // Serve static assests if in production
-if ( process.env.NODE_ENV === 'production' ) {
+if (process.env.NODE_ENV === 'production') {
   // Set static folder
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html')); 
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server running on port ${ port }`));
-
+app.listen(port, () => console.log(`Server running on port ${port}`));
