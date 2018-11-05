@@ -2,8 +2,8 @@ import {
   ADD_POST,
   GET_POSTS,
   GET_POST,
-  DELETE_POST, 
-  POST_LOADING 
+  DELETE_POST,
+  POST_LOADING
 } from '../actions/types';
 
 const initialState = {
@@ -12,7 +12,7 @@ const initialState = {
   loading: false
 };
 
-export default function(state=initialState, action) {
+export default function(state = initialState, action) {
   switch ( action.type ) {
 
     case POST_LOADING:
@@ -38,13 +38,13 @@ export default function(state=initialState, action) {
     case ADD_POST:
       return {
         ...state,
-        posts: [ action.payload, ...state.posts ]
+        posts: [action.payload, ...state.posts]
       };
 
     case DELETE_POST:
       return {
         ...state,
-        posts: state.posts.filter( post => post._id !== action.payload )
+        posts: state.posts.filter(post => post._id !== action.payload)
       };
 
     default:
