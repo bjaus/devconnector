@@ -1,11 +1,4 @@
-
-*.swp
-*.swo
-
+node_modules
 package-lock.json
+*dev_keys.js
 
-# Config
-keys.js
-
-# Node Modules
-node_modules/
