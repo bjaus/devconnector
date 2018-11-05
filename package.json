@@ -1,7 +1,10 @@
 {
   "name": "devconnect",
-  "version": "1.0.0",
   "description": "Social network for developers",
+  "version": "1.0.0",
+  "engines: {
+    "node: "11.0.0"
+  },
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
