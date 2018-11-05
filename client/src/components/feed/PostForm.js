@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { addPost } from '../../actions/postActions';
@@ -12,7 +11,7 @@ class PostForm extends Component {
 
     this.state = {
       text: '',
-      errors: ''
+      errors: {}
     };
 
     this.onChange = this.onChange.bind(this);
@@ -90,4 +89,4 @@ const mapStateToProps = state => ({
   errors: state.errors
 });
 
-export default connect(mapStateToProps, { addPost })( withRouter(PostForm) );
+export default connect(mapStateToProps, { addPost })(PostForm);
