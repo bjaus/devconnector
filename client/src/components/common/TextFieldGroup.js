@@ -5,15 +5,16 @@ import PropTypes from 'prop-types';
 const TextFieldGroup = ({
   name,
   placeholder,
+  type,
   value,
   label,
   error,
   info,
-  type,
   onChange,
   disabled,
   addBreak
 }) => {
+
   return (
     <div className='from-group'>
       { label && <label className='text-muted'>{ label }</label> }
@@ -39,16 +40,16 @@ const TextFieldGroup = ({
 };
 
 TextFieldGroup.propTypes = {
+  onChange: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
   label: PropTypes.string,
   error: PropTypes.string,
   info: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
+  type: PropTypes.string,
   disabled: PropTypes.string,
-  addBreak: PropTypes.bool.isRequired,
+  addBreak: PropTypes.bool,
 };
 
 TextFieldGroup.defaultProps = {
