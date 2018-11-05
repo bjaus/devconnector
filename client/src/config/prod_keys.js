@@ -1,4 +1,2 @@
-module.export = {
-  clientId: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET
-}
+export const clientId = process.env.CLIENT_ID;
+export const clientSecret = process.env.CLIENT_SECRET;
