@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { clientId, clientSecret } from '../../config/keys';
 
 class ProfileGithub extends Component {
 
@@ -8,8 +7,8 @@ class ProfileGithub extends Component {
     super(props);
 
     this.state = {
-      clientId,
-      clientSecret,
+      clientId: 'adf9841b1450a0e2d39c',
+      clientSecret: '20a13ede6c0280a26eceb31d0a2c1b69055d6c5a',
       count: 5,
       sort: 'created: asc',
       repos: []
