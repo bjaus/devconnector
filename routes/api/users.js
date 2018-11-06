@@ -46,11 +46,11 @@ router.get('/all',
 
           res.json(
             users.sort( (a, b) => {
-              let nameA = a.name.toUpperCase();
-              let nameB = b.name.toUpperCase();
+              let nameA = a.name.toUpperCase().trim();
+              let nameB = b.name.toUpperCase().trim();
 
-              if ( nameA > nameB ) return -1;
-              else if ( nameA < nameB ) return 1;
+              if ( nameA < nameB ) return -1;
+              else if ( nameA > nameB ) return 1;
               else return 0;
             })
           );
