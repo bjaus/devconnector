@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { addEducation } from '../../actions/profileActions';
+//import DateTime from 'react-datetime';
+//import './credentials.css';
 
 class AddEducation extends Component {
 
@@ -77,7 +79,8 @@ class AddEducation extends Component {
               <small className='d-block pb-3'>* = required fields</small>
 
               <form onSubmit={ this.onSubmit }>
-                
+
+
                 <TextFieldGroup
                   placeholder='* School'
                   name='school'
@@ -101,7 +104,21 @@ class AddEducation extends Component {
                   onChange={ this.onChange }
                   error={ errors.fieldOfStudy }
                 />
-                
+
+      {/*
+                <label className='text-muted'>From Date</label>
+                <DateTime 
+                  dateFormat='YYYY-MM-DD' 
+                  timeFormat={ false }
+                  inputProps={ {
+                    className: 'form-control form-control-lg',
+                    placeholder: 'YYYY-MM-DD',
+                    name: 'from'
+                  }}
+                />
+                <br /> 
+        */}
+
                 <TextFieldGroup
                   label='From Date'
                   type='date'

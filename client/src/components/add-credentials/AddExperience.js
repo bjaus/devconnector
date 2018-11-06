@@ -106,6 +106,7 @@ class AddExperience extends Component {
                   label='From Date'
                   type='date'
                   name='from'
+                  placeholder='mm/dd/yyyy'
                   value={ this.state.from }
                   onChange={ this.onChange }
                   error={ errors.from }
@@ -115,6 +116,7 @@ class AddExperience extends Component {
                   label='To Date'
                   type='date'
                   name='to'
+                  placeholder='mm/dd/yyyy'
                   value={ this.state.to }
                   onChange={ this.onChange }
                   error={ errors.to }
